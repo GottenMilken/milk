@@ -1,0 +1,6 @@
+variable -> 5
+
+check variable >= 10
+    show "Check says above 10"
+otherwise
+    show "Check says below 10"
