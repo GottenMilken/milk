@@ -1,3 +1,4 @@
+
 Milk is a minimalistic programming language designed to be incredibly simplistic and human readable.
 As of now, it is in incredibly early stage and only exists to use as the baseplate for a more "fleshed out" version of milk.
 
@@ -53,3 +54,33 @@ example
 >   count -> count + 1
 > during count <= 5
 
+
+make - Defines a function.
+give - Returns a value from a function.
+
+example
+> Input:
+> make add(a, b)
+>   give a + b
+>
+> result -> add(10, 20)
+> show result
+
+> Output:
+> 30
+
+Function variables are local to the function. Functions can read variables from the global scope, but assignments inside a function stay local.
+
+Functions can also call other functions and themselves.
+
+example
+> Input:
+> make factorial(n)
+>   check n <= 1
+>     give 1
+>   give n * factorial(n - 1)
+>
+> show factorial(5)
+
+> Output:
+> 120
