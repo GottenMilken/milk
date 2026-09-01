@@ -1,0 +1,10 @@
+count -> 1
+
+show "Starting"
+
+during count <= 5
+  show "Count is {count}"
+  count -> count + 1
+
+show "Finished"
+

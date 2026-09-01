@@ -1,0 +1,9 @@
+make greet(name)
+    show "Hello, {name}!"
+
+make add(a, b)
+    give a + b
+
+greet("Milk")
+result -> add(10, 20)
+show result
