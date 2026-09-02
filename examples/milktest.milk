@@ -1,0 +1,38 @@
+show "Show is working!"
+
+run "echo Run is working!"
+
+variable -> "Variables are working!"
+show variable
+
+make functionchecker()
+    show "Functions are working!"
+functionchecker()
+
+if -> yes
+make ifcheck()
+    check if == yes
+        show "Check is working!"
+    otherwise
+        show "Otherwise is working!"
+ifcheck()
+if -> no
+ifcheck()
+
+repeat 5
+    show "Repeats are working!"
+
+while -> 0
+
+during while < 5
+    show "During is working!"
+    while -> while + 1
+
+score -> 10 + 5 * 2
+check score == 20
+    show "Arithmetic is working!"
+
+numbers -> [1, 2, 3]
+show "Lists work! ({numbers})"
+result -> numbers * 2
+show "Data flow works! ({result})"

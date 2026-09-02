@@ -1,0 +1,4 @@
+roll -> run "shuf -i 1-6 -n 1"
+
+show "You rolled:"
+show roll

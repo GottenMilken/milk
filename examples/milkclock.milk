@@ -1,0 +1,10 @@
+loop -> 1
+
+during loop == 1
+    time -> run "date '+%H:%M:%S'"
+    date -> run "date '+%A, %d %B %Y'"
+    run "clear"
+    show "          MILK CLOCK"
+    show ""
+    show "   {date}"
+    show "           {time}"
