@@ -5,6 +5,9 @@ LDFLAGS = -lm
 
 TARGET = milk
 
+PREFIX ?= /usr/local
+BINDIR = $(PREFIX)/bin
+
 SRC = \
 	src/main.c \
 	src/lexer.c \
@@ -21,7 +24,17 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CC) $(OBJ) $(LDFLAGS) -o $(TARGET)
 
+src/%.o: src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+install: $(TARGET)
+	install -d $(BINDIR)
+	install -m 755 $(TARGET) $(BINDIR)/$(TARGET)
+
+uninstall:
+	rm -f $(BINDIR)/$(TARGET)
+
 clean:
 	rm -f $(OBJ) $(TARGET)
 
-.PHONY: all clean
+.PHONY: all install uninstall clean
